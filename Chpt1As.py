@@ -8,14 +8,16 @@ def main():
     #This lets the user input the amount of days but only in numbers because of the integer(int) function.
     Days = int(input("How many days would you like to stay at SummerSet Hotel pick a number between 1 and 4?: "))
 
-    if Days == 1:
+#Lets the user pick a number of days less than or equal to 4
+    if Days <=4:
         print("Before we start select the room you want to stay in.")
 
-    elif Days == 2:
-        print("Before we start select the room you want to stay in.")
+#Decided not to use elif Days 2 and 3
+    #elif Days == 2:
+        #print("Before we start select the room you want to stay in.")
 
-    elif Days == 3:
-        print("Before we start select the room you want to stay in.")
+    #elif Days == 3:
+        #print("Before we start select the room you want to stay in.")
 
     #If the selected answer isn't in the list it'll quit the code
     elif Days != [1,2,3,4]:
@@ -46,7 +48,8 @@ def main():
         print("INVALID SELECTED ROOM")
 
     #The calculation part of the code
-    totalcost = Days * cost_day
+    tax = cost_day * .0825
+    totalcost = tax + Days * cost_day
 
     #Shows the user the cost
     print(f"Your stay at SummerSet will cost {totalcost} for {Days} days, enjoy.\n")
